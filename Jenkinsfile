@@ -6,9 +6,8 @@
      stage('Build image') {
          app = docker.build("eub456/test")
      }
-     stage ('Push Image'){
-         docker.withRegistry('https://registry.hub.docker.com', 'test')
-         app.push("${env.BUILD_NUMBER}")
-         app.push("latest")
+        stage('Push') {
+            sh(script: 'docker login -u eub456 -p whrqkf12@')
+            sh(script: 'docker push eub456/ruby-app:latest')
      }
 }

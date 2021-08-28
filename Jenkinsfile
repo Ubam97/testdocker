@@ -8,6 +8,6 @@
      }
         stage('Push') {
             sh(script: 'docker login -u eub456 -p whrqkf12@')
-            sh(script: 'docker push eub456/ruby-app:latest')
+            sh(script: 'docker push eub456/test:latest')
      }
 }

@@ -4,9 +4,11 @@
      }
 
      stage('Build image') {
-         app = docker.build("test/image")
+         app = docker.build("eub456/test")
      }
      stage ('Push Image'){
-         docker.withRegistry('https://hub.docker.com/repository/docker/eub456/test', 'test')
+         docker.withRegistry('https://registry.hub.docker.com', 'test')
+         app.push("${env.BUILD_NUMBER}")
+         app.push("latest")
      }
 }

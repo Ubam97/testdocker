@@ -8,7 +8,7 @@
      }
 
      stage('Push image') {
-            docker.withRegistry('https://registry.hub.docker.com', 'jenkinsfordockerhub') {
+            docker.withRegistry('https://registry.hub.docker.com', 'test') {
                 sh(script: 'docker push eub456/test:latest')
             }
         }
